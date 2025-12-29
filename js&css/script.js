@@ -90,16 +90,16 @@ function startAnswerTimer() {
     clearInterval(theInterval)
     clearTimeout(theTimeout)
 
-    let answerTimer = 5;
-    timerSpan.innerText = answerTimer;
+    let answerTimer = 5
+    timerSpan.innerText = answerTimer
 
     theTimeout = setInterval(() => {
-        answerTimer--;
-        timerSpan.innerText = answerTimer;
+        answerTimer--
+        timerSpan.innerText = answerTimer
 
         if (answerTimer <= 0) {
-            clearInterval(theTimeout);
-            nextQuestion();
+            clearInterval(theTimeout)
+            nextQuestion()
         }
     }, 1000);
 }
@@ -120,6 +120,7 @@ function questionInterval() {
     }, 1000)
 }
 
+// ALWAYS SHOW CORRECT ANSWER 
 function showCorrectAnswer() {
     const allAnswers = document.querySelectorAll('.answer')
     allAnswers.forEach(div => {
@@ -130,7 +131,7 @@ function showCorrectAnswer() {
     startAnswerTimer() // START 5s TIMER
 }
 
-// SHOW QUESTION BY CLICK
+// SHOW ANOTHER QUESTION BY CLICK
 nextOne.addEventListener('click', () => {
     nextQuestion()
 })
